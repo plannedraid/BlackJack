@@ -11,39 +11,38 @@ import java.util.Random;
  * @author dymoo6791
  */
 public class gameFrame extends javax.swing.JFrame {
+
     String userTotal, com2Card;
-    int firstValUser, secValUser, thirdValUser,fourthValUser, userTotal2C, userTotal3C;
-    int firstValCom, secValCom, thirdValCom,fourthValCom, comTotal2C, userBlackJack, comBlackJack;
+    int firstValUser, secValUser, thirdValUser, fourthValUser, userTotal2C, userTotal3C;
+    int firstValCom, secValCom, thirdValCom, fourthValCom, comTotal2C, userBlackJack, comBlackJack;
     Random rand = new Random();
-    String[] cards
-            = new String[]{"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"};
+    String[] cards = new String[]{"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"}; //Card Selection
 
-
-    public gameFrame() {
+    public gameFrame() { //Hides all components on the panel on launch
         initComponents();
-        comCard2.setVisible(false);
-        comCard3.setVisible(false);
-        comCard4.setVisible(false);
-        userCardLbl3.setVisible(false);
-        userCardLbl4.setVisible(false);
-        userCardLbl5.setVisible(false);
-        userCardLbl1.setVisible(false);
-        userCardLbl2.setVisible(false);
-        comCard1.setVisible(false);
-        com2Hidden.setVisible(false);
+        comHand2Card1.setVisible(false);
+        comHand2Card2.setVisible(false);
+        comHand2Card3.setVisible(false);
+        userHand2Card1.setVisible(false);
+        userHand2Card2.setVisible(false);
+        userHand2Card3.setVisible(false);
+        userHand1Card1.setVisible(false);
+        userHand1Card2.setVisible(false);
+        comHand1Card1.setVisible(false);
+        comHand1Card2.setVisible(false);
         hit2CardsBtn.setVisible(false);
-        stand2CardsBtn.setVisible(false);
+        standBtn.setVisible(false);
         hit3CardsBtn.setVisible(false);
         userTotalLbl.setVisible(false);
         comTotalLbl.setVisible(false);
-        thirdHitLbl1.setVisible(false);
-        thirdHitLbl2.setVisible(false);
-        thirdHitLbl3.setVisible(false);
-        thirdHitLbl4.setVisible(false);
-        userCardLbl6.setVisible(false);
-        userCardLbl7.setVisible(false);
-        userCardLbl8.setVisible(false);
-        userCardLbl9.setVisible(false);
+        comHand3Card1.setVisible(false);
+        comHand3Card2.setVisible(false);
+        comHand3Card3.setVisible(false);
+        comHand3Card4.setVisible(false);
+        userHand3Card4.setVisible(false);
+        userHand3Card1.setVisible(false);
+        userHand3Card2.setVisible(false);
+        userHand3Card3.setVisible(false);
         newGameBtn.setVisible(false);
         NoMoreLbl.setVisible(false);
         winOrLoseLbl.setVisible(false);
@@ -62,35 +61,35 @@ public class gameFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        userCardLbl6 = new javax.swing.JLabel();
-        thirdHitLbl2 = new javax.swing.JLabel();
-        thirdHitLbl3 = new javax.swing.JLabel();
-        thirdHitLbl4 = new javax.swing.JLabel();
-        thirdHitLbl1 = new javax.swing.JLabel();
+        comHand3Card1 = new javax.swing.JLabel();
+        comHand3Card2 = new javax.swing.JLabel();
+        comHand3Card3 = new javax.swing.JLabel();
+        comHand3Card4 = new javax.swing.JLabel();
         hit2CardsBtn = new javax.swing.JButton();
-        stand2CardsBtn = new javax.swing.JButton();
+        standBtn = new javax.swing.JButton();
         newGameBtn = new javax.swing.JButton();
-        userCardLbl1 = new javax.swing.JLabel();
-        userCardLbl2 = new javax.swing.JLabel();
-        userCardLbl3 = new javax.swing.JLabel();
         StartBtn = new javax.swing.JButton();
-        userCardLbl4 = new javax.swing.JLabel();
-        userCardLbl5 = new javax.swing.JLabel();
+        userHand1Card1 = new javax.swing.JLabel();
+        userHand1Card2 = new javax.swing.JLabel();
+        userHand2Card1 = new javax.swing.JLabel();
+        userHand2Card2 = new javax.swing.JLabel();
+        userHand2Card3 = new javax.swing.JLabel();
+        userHand3Card1 = new javax.swing.JLabel();
+        userHand3Card2 = new javax.swing.JLabel();
+        userHand3Card3 = new javax.swing.JLabel();
+        userHand3Card4 = new javax.swing.JLabel();
         userTotalLbl = new javax.swing.JLabel();
-        comCard3 = new javax.swing.JLabel();
-        comCard2 = new javax.swing.JLabel();
-        comCard1 = new javax.swing.JLabel();
-        comCard4 = new javax.swing.JLabel();
-        com2Hidden = new javax.swing.JLabel();
+        comHand1Card1 = new javax.swing.JLabel();
+        comHand2Card1 = new javax.swing.JLabel();
+        comHand2Card2 = new javax.swing.JLabel();
+        comHand2Card3 = new javax.swing.JLabel();
+        comHand1Card2 = new javax.swing.JLabel();
         dealerBustLbl = new javax.swing.JLabel();
         hit3CardsBtn = new javax.swing.JButton();
         comCardStorage2 = new javax.swing.JLabel();
         comCardStorage3 = new javax.swing.JLabel();
-        comTotalLbl = new javax.swing.JLabel();
         comCardStorage4 = new javax.swing.JLabel();
-        userCardLbl7 = new javax.swing.JLabel();
-        userCardLbl8 = new javax.swing.JLabel();
-        userCardLbl9 = new javax.swing.JLabel();
+        comTotalLbl = new javax.swing.JLabel();
         NoMoreLbl = new javax.swing.JLabel();
         winOrLoseLbl = new javax.swing.JLabel();
         userBustLbl = new javax.swing.JLabel();
@@ -100,24 +99,18 @@ public class gameFrame extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 102, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        userCardLbl6.setFont(new java.awt.Font("Lao UI", 0, 12)); // NOI18N
-        userCardLbl6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        userCardLbl6.setText("0");
-        userCardLbl6.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
-        jPanel1.add(userCardLbl6, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 480, 120, 170));
+        comHand3Card1.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        jPanel1.add(comHand3Card1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 120, 170));
 
-        thirdHitLbl2.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
-        jPanel1.add(thirdHitLbl2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, 120, 170));
+        comHand3Card2.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        jPanel1.add(comHand3Card2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, 120, 170));
 
-        thirdHitLbl3.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
-        jPanel1.add(thirdHitLbl3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, 120, 170));
+        comHand3Card3.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        jPanel1.add(comHand3Card3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, 120, 170));
 
-        thirdHitLbl4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FNV lucky38.png"))); // NOI18N
-        thirdHitLbl4.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
-        jPanel1.add(thirdHitLbl4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 30, 120, 170));
-
-        thirdHitLbl1.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
-        jPanel1.add(thirdHitLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 120, 170));
+        comHand3Card4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FNV lucky38.png"))); // NOI18N
+        comHand3Card4.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        jPanel1.add(comHand3Card4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 30, 120, 170));
 
         hit2CardsBtn.setText("Hit ");
         hit2CardsBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -127,16 +120,16 @@ public class gameFrame extends javax.swing.JFrame {
         });
         jPanel1.add(hit2CardsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 530, 102, 36));
 
-        stand2CardsBtn.setText("Stand ");
-        stand2CardsBtn.setMaximumSize(new java.awt.Dimension(45, 23));
-        stand2CardsBtn.setMinimumSize(new java.awt.Dimension(45, 23));
-        stand2CardsBtn.setPreferredSize(new java.awt.Dimension(45, 23));
-        stand2CardsBtn.addActionListener(new java.awt.event.ActionListener() {
+        standBtn.setText("Stand ");
+        standBtn.setMaximumSize(new java.awt.Dimension(45, 23));
+        standBtn.setMinimumSize(new java.awt.Dimension(45, 23));
+        standBtn.setPreferredSize(new java.awt.Dimension(45, 23));
+        standBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                stand2CardsBtnActionPerformed(evt);
+                standBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(stand2CardsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 610, 102, 36));
+        jPanel1.add(standBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 610, 102, 36));
 
         newGameBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         newGameBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -151,22 +144,6 @@ public class gameFrame extends javax.swing.JFrame {
         });
         jPanel1.add(newGameBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, 130, 170));
 
-        userCardLbl1.setBackground(new java.awt.Color(255, 255, 255));
-        userCardLbl1.setFont(new java.awt.Font("Lao UI", 0, 12)); // NOI18N
-        userCardLbl1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        userCardLbl1.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
-        jPanel1.add(userCardLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 480, 120, 170));
-
-        userCardLbl2.setFont(new java.awt.Font("Lao UI", 0, 12)); // NOI18N
-        userCardLbl2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        userCardLbl2.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
-        jPanel1.add(userCardLbl2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 480, 120, 170));
-
-        userCardLbl3.setFont(new java.awt.Font("Lao UI", 0, 12)); // NOI18N
-        userCardLbl3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        userCardLbl3.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
-        jPanel1.add(userCardLbl3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 480, 120, 170));
-
         StartBtn.setFont(new java.awt.Font("Lao UI", 0, 12)); // NOI18N
         StartBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Lucky38Deal.png"))); // NOI18N
         StartBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -176,47 +153,84 @@ public class gameFrame extends javax.swing.JFrame {
         });
         jPanel1.add(StartBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 240, 120, 170));
 
-        userCardLbl4.setFont(new java.awt.Font("Lao UI", 0, 12)); // NOI18N
-        userCardLbl4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        userCardLbl4.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
-        jPanel1.add(userCardLbl4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 480, 120, 170));
+        userHand1Card1.setBackground(new java.awt.Color(255, 255, 255));
+        userHand1Card1.setFont(new java.awt.Font("Lao UI", 0, 12)); // NOI18N
+        userHand1Card1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        userHand1Card1.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        jPanel1.add(userHand1Card1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 480, 120, 170));
 
-        userCardLbl5.setFont(new java.awt.Font("Lao UI", 0, 12)); // NOI18N
-        userCardLbl5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        userCardLbl5.setText("0");
-        userCardLbl5.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
-        jPanel1.add(userCardLbl5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 480, 120, 170));
+        userHand1Card2.setFont(new java.awt.Font("Lao UI", 0, 12)); // NOI18N
+        userHand1Card2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        userHand1Card2.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        jPanel1.add(userHand1Card2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 480, 120, 170));
+
+        userHand2Card1.setFont(new java.awt.Font("Lao UI", 0, 12)); // NOI18N
+        userHand2Card1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        userHand2Card1.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        jPanel1.add(userHand2Card1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 480, 120, 170));
+
+        userHand2Card2.setFont(new java.awt.Font("Lao UI", 0, 12)); // NOI18N
+        userHand2Card2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        userHand2Card2.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        jPanel1.add(userHand2Card2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 480, 120, 170));
+
+        userHand2Card3.setFont(new java.awt.Font("Lao UI", 0, 12)); // NOI18N
+        userHand2Card3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        userHand2Card3.setText("0");
+        userHand2Card3.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        jPanel1.add(userHand2Card3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 480, 120, 170));
+
+        userHand3Card1.setFont(new java.awt.Font("Lao UI", 0, 12)); // NOI18N
+        userHand3Card1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        userHand3Card1.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        jPanel1.add(userHand3Card1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 480, 120, 170));
+
+        userHand3Card2.setFont(new java.awt.Font("Lao UI", 0, 12)); // NOI18N
+        userHand3Card2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        userHand3Card2.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        jPanel1.add(userHand3Card2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 480, 120, 170));
+
+        userHand3Card3.setFont(new java.awt.Font("Lao UI", 0, 12)); // NOI18N
+        userHand3Card3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        userHand3Card3.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        jPanel1.add(userHand3Card3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 480, 120, 170));
+
+        userHand3Card4.setFont(new java.awt.Font("Lao UI", 0, 12)); // NOI18N
+        userHand3Card4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        userHand3Card4.setText("0");
+        userHand3Card4.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        jPanel1.add(userHand3Card4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 480, 120, 170));
 
         userTotalLbl.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         userTotalLbl.setText("Total:");
         jPanel1.add(userTotalLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 470, 230, -1));
 
-        comCard3.setFont(new java.awt.Font("Lao UI", 0, 12)); // NOI18N
-        comCard3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FNV lucky38.png"))); // NOI18N
-        comCard3.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
-        jPanel1.add(comCard3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 30, 120, 170));
+        comHand1Card1.setBackground(new java.awt.Color(255, 255, 255));
+        comHand1Card1.setFont(StartBtn.getFont());
+        comHand1Card1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        comHand1Card1.setText("?");
+        comHand1Card1.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        jPanel1.add(comHand1Card1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, 120, 170));
 
-        comCard2.setFont(new java.awt.Font("Lao UI", 0, 14)); // NOI18N
-        comCard2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        comCard2.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
-        jPanel1.add(comCard2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 120, 170));
+        comHand2Card1.setFont(new java.awt.Font("Lao UI", 0, 14)); // NOI18N
+        comHand2Card1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        comHand2Card1.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        jPanel1.add(comHand2Card1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 120, 170));
 
-        comCard1.setBackground(new java.awt.Color(255, 255, 255));
-        comCard1.setFont(StartBtn.getFont());
-        comCard1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        comCard1.setText("?");
-        comCard1.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
-        jPanel1.add(comCard1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, 120, 170));
+        comHand2Card2.setFont(new java.awt.Font("Lao UI", 0, 12)); // NOI18N
+        comHand2Card2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FNV lucky38.png"))); // NOI18N
+        comHand2Card2.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        jPanel1.add(comHand2Card2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 30, 120, 170));
 
-        comCard4.setFont(new java.awt.Font("Lao UI", 0, 12)); // NOI18N
-        comCard4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FNV lucky38.png"))); // NOI18N
-        comCard4.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
-        jPanel1.add(comCard4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, 120, 170));
+        comHand2Card3.setFont(new java.awt.Font("Lao UI", 0, 12)); // NOI18N
+        comHand2Card3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FNV lucky38.png"))); // NOI18N
+        comHand2Card3.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        jPanel1.add(comHand2Card3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, 120, 170));
 
-        com2Hidden.setFont(new java.awt.Font("Lao UI", 0, 12)); // NOI18N
-        com2Hidden.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FNV lucky38.png"))); // NOI18N
-        com2Hidden.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
-        jPanel1.add(com2Hidden, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, 120, 170));
+        comHand1Card2.setFont(new java.awt.Font("Lao UI", 0, 12)); // NOI18N
+        comHand1Card2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FNV lucky38.png"))); // NOI18N
+        comHand1Card2.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        jPanel1.add(comHand1Card2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, 120, 170));
 
         dealerBustLbl.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jPanel1.add(dealerBustLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 410, 90));
@@ -233,27 +247,12 @@ public class gameFrame extends javax.swing.JFrame {
         comCardStorage3.setText("0");
         jPanel1.add(comCardStorage3, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 80, 60, 60));
 
-        comTotalLbl.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        comTotalLbl.setText("Total:");
-        jPanel1.add(comTotalLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 230, -1));
-
         comCardStorage4.setText("0");
         jPanel1.add(comCardStorage4, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 150, 60, 60));
 
-        userCardLbl7.setFont(new java.awt.Font("Lao UI", 0, 12)); // NOI18N
-        userCardLbl7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        userCardLbl7.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
-        jPanel1.add(userCardLbl7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 480, 120, 170));
-
-        userCardLbl8.setFont(new java.awt.Font("Lao UI", 0, 12)); // NOI18N
-        userCardLbl8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        userCardLbl8.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
-        jPanel1.add(userCardLbl8, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 480, 120, 170));
-
-        userCardLbl9.setFont(new java.awt.Font("Lao UI", 0, 12)); // NOI18N
-        userCardLbl9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        userCardLbl9.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
-        jPanel1.add(userCardLbl9, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 480, 120, 170));
+        comTotalLbl.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        comTotalLbl.setText("Total:");
+        jPanel1.add(comTotalLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 230, -1));
 
         NoMoreLbl.setText("You're only getting 4 cards");
         jPanel1.add(NoMoreLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 530, 140, 30));
@@ -279,92 +278,105 @@ public class gameFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void hit2CardsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hit2CardsBtnActionPerformed
-        String Card1 = userCardLbl1.getText();
-        String Card2 = userCardLbl2.getText();
-        userCardLbl3.setText(Card1);
-        userCardLbl4.setText(Card2);
-        userHit();
-        hit2CardsBtn.setVisible(false);
-        userCardLbl3.setVisible(true);
-        userCardLbl4.setVisible(true);
-        userCardLbl5.setVisible(true);
-        userCardLbl1.setVisible(false);
-        userCardLbl2.setVisible(false);
+        String Card1 = userHand1Card1.getText(); //gets value from first 2 cards
+        String Card2 = userHand1Card2.getText();
+        userHand2Card1.setText(Card1); //moves first 2 values to next set of cards
+        userHand2Card2.setText(Card2);
+        userHit(); //calls to userHit Method to give user another card
+
+        hit2CardsBtn.setVisible(false);//hides first hit button to prevent possible bugs
+        userHand2Card1.setVisible(true);
+        userHand2Card2.setVisible(true);
+        userHand2Card3.setVisible(true); //add card and move to next set
+        userHand1Card1.setVisible(false);
+        userHand1Card2.setVisible(false);
     }//GEN-LAST:event_hit2CardsBtnActionPerformed
 
-    private void stand2CardsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stand2CardsBtnActionPerformed
-        String userCard1 = userCardLbl1.getText();
-        String userCard2 = userCardLbl2.getText();
-        String userCard3 = userCardLbl5.getText();
-        String userCard4 = userCardLbl6.getText();
-        userTotalLbl.setText(userTotalCards(userCard1, userCard2, userCard3,userCard4));
-        String com1 = comCard1.getText();
+    private void standBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_standBtnActionPerformed
+        String userCard1 = userHand1Card1.getText();
+        String userCard2 = userHand1Card2.getText(); //Get Values from Cards to send to userTotalLbl Method
+        String userCard3 = userHand2Card3.getText();
+        String userCard4 = userHand3Card4.getText();
+        userTotalLbl.setText(userTotalCards(userCard1, userCard2, userCard3, userCard4));
+        String com1 = comHand1Card1.getText();
         String com2 = comCardStorage2.getText();
-        String com3 = comCardStorage3.getText();
+        String com3 = comCardStorage3.getText(); //Get Values from Cards to send to comTotalLbl Method
         String com4 = comCardStorage4.getText();
         comTotalLbl.setText(comTotal(com1, com2, com3, com4));
-        String test = userTotalLbl.getText();
-        String run = comTotalLbl.getText();
-        winOrLose(test,run);
-        newGameBtn.setVisible(true);
-    }//GEN-LAST:event_stand2CardsBtnActionPerformed
+        String userWin = userTotalLbl.getText();
+        String comWin = comTotalLbl.getText();  //get totals from each player
+        winOrLose(userWin, comWin);
+        newGameBtn.setVisible(true); //display new game button
+    }//GEN-LAST:event_standBtnActionPerformed
 
     private void StartBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartBtnActionPerformed
-        userCards();
-        comCards();
-        
-        userCardLbl1.setVisible(true);
-        userCardLbl2.setVisible(true);
-        comCard1.setVisible(true);
-        com2Hidden.setVisible(true);
+        userCards(); //assign user cards
+        comCards(); //assign dealer cards
+        userHand1Card1.setVisible(true);
+        userHand1Card2.setVisible(true);
+        comHand1Card1.setVisible(true);
+        comHand1Card2.setVisible(true);
         hit2CardsBtn.setVisible(true);
-        stand2CardsBtn.setVisible(true);
+        standBtn.setVisible(true);
         hit3CardsBtn.setVisible(true);
-
         userTotalLbl.setVisible(true);
         comTotalLbl.setVisible(true);
-       
         StartBtn.setVisible(false);
-        userCardLbl3.setVisible(false);
-        userCardLbl4.setVisible(false);
-        userCardLbl5.setVisible(false);  
-        if (comTotal2C < 13) {
+        userHand2Card1.setVisible(false);
+        userHand2Card2.setVisible(false);
+        userHand2Card3.setVisible(false);
+
+        String com1 = comHand1Card1.getText();
+        String com2 = comCardStorage2.getText();
+        String com3 = comCardStorage3.getText(); //Get Values from Cards to send to comTotalLbl Method
+        String com4 = comCardStorage4.getText();
+        comTotal(com1, com2, com3, com4);
+        if (comTotal2C < 13) { //makes com hit if they have less than 13
             comHit();
-            comCard1.setVisible(false);
-            com2Hidden.setVisible(false);
-            comCard2.setVisible(true);
-            comCard3.setVisible(true);
-            comCard4.setVisible(true);
-        } else if (comTotal2C >21){
+            comHand1Card1.setVisible(false);
+            comHand1Card2.setVisible(false);
+            comHand2Card1.setVisible(true);
+            comHand2Card2.setVisible(true);
+            comHand2Card3.setVisible(true);
+        } else if (comTotal2C < 13) { //makes com hit again if they have less than 13
+            comHitAgain();
+            comHand2Card1.setVisible(false);
+            comHand2Card2.setVisible(false);
+            comHand2Card3.setVisible(false);
+            comHand3Card1.setVisible(true);
+            comHand3Card2.setVisible(true);
+            comHand3Card3.setVisible(true);
+            comHand3Card4.setVisible(true);
+        } else if (comTotal2C > 21) {
             dealerBustLbl.setText("Dealer Busted");
         }
     }//GEN-LAST:event_StartBtnActionPerformed
 
     private void hit3CardsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hit3CardsBtnActionPerformed
-        String Card1 = userCardLbl3.getText();
-        String Card2 = userCardLbl4.getText();
-        String Card3 = userCardLbl5.getText();
-        userCardLbl7.setText(Card1);
-        userCardLbl8.setText(Card2);
-        userCardLbl9.setText(Card3);
-        userHitAgain();
+        String Card1 = userHand2Card1.getText();
+        String Card2 = userHand2Card2.getText();//get card values
+        String Card3 = userHand2Card3.getText();
+        userHand3Card1.setText(Card1);
+        userHand3Card2.setText(Card2); //move card values
+        userHand3Card3.setText(Card3);
+        userHitAgain(); //add new card value
         NoMoreLbl.setVisible(true);
         hit3CardsBtn.setVisible(false);
         hit2CardsBtn.setVisible(false);
-        userCardLbl3.setVisible(false);
-        userCardLbl4.setVisible(false);
-        userCardLbl5.setVisible(false);
-        userCardLbl1.setVisible(false);
-        userCardLbl2.setVisible(false);
-        userCardLbl6.setVisible(true);
-        userCardLbl7.setVisible(true);
-        userCardLbl8.setVisible(true);
-        userCardLbl9.setVisible(true);
+        userHand2Card1.setVisible(false); //hide old cards
+        userHand2Card2.setVisible(false);
+        userHand2Card3.setVisible(false);
+        userHand1Card1.setVisible(false);
+        userHand1Card2.setVisible(false);
+        userHand3Card4.setVisible(true);
+        userHand3Card1.setVisible(true);
+        userHand3Card2.setVisible(true); //show new cards
+        userHand3Card3.setVisible(true);
     }//GEN-LAST:event_hit3CardsBtnActionPerformed
 
     private void newGameBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newGameBtnActionPerformed
-         this.setVisible(false);
-       new mainMenuFrame().setVisible(true);
+        this.setVisible(false); //reset game
+        new mainMenuFrame().setVisible(true);
     }//GEN-LAST:event_newGameBtnActionPerformed
 
     public void userCards() {
@@ -373,14 +385,14 @@ public class gameFrame extends javax.swing.JFrame {
             String temp = cards[randomIndexToSwap];
             cards[randomIndexToSwap] = cards[i];
             cards[i] = temp;
-            userCardLbl1.setText(cards[0]);
+            userHand1Card1.setText(cards[0]);
         }
         for (int i = 0; i < cards.length; i++) {
             int randomIndexToSwap = rand.nextInt(cards.length);
             String temp = cards[randomIndexToSwap];
             cards[randomIndexToSwap] = cards[i];
             cards[i] = temp;
-            userCardLbl2.setText(cards[0]);
+            userHand1Card2.setText(cards[0]);
         }
     }
 
@@ -390,7 +402,7 @@ public class gameFrame extends javax.swing.JFrame {
             String temp = cards[randomIndexToSwap];
             cards[randomIndexToSwap] = cards[i];
             cards[i] = temp;
-            comCard1.setText(cards[0]);
+            comHand1Card1.setText(cards[0]);
         }
         for (int i = 0; i < cards.length; i++) {
             int randomIndexToSwap = rand.nextInt(cards.length);
@@ -407,16 +419,17 @@ public class gameFrame extends javax.swing.JFrame {
             String temp = cards[randomIndexToSwap];
             cards[randomIndexToSwap] = cards[i];
             cards[i] = temp;
-            userCardLbl5.setText(cards[0]);
+            userHand2Card3.setText(cards[0]);
         }
     }
+
     public void userHitAgain() {
         for (int i = 0; i < cards.length; i++) {
             int randomIndexToSwap = rand.nextInt(cards.length);
             String temp = cards[randomIndexToSwap];
             cards[randomIndexToSwap] = cards[i];
             cards[i] = temp;
-            userCardLbl6.setText(cards[0]);
+            userHand3Card4.setText(cards[0]);
         }
     }
 
@@ -428,15 +441,35 @@ public class gameFrame extends javax.swing.JFrame {
             cards[i] = temp;
             comCardStorage3.setText(cards[0]);
         }
-        String comFirst = comCard1.getText();
-        comCard2.setText(comFirst);
-        comCard1.setVisible(true);
-        com2Hidden.setVisible(true);
-        comCard2.setVisible(false);
-        comCard3.setVisible(false);
-        comCard4.setVisible(false);
+        String comFirst = comHand1Card1.getText();
+        comHand2Card1.setText(comFirst);
+        comHand1Card1.setVisible(true);
+        comHand1Card2.setVisible(true);
+        comHand2Card1.setVisible(false);
+        comHand2Card2.setVisible(false);
+        comHand2Card3.setVisible(false);
     }
 
+    public void comHitAgain() {
+        for (int i = 0; i < cards.length; i++) {
+            int randomIndexToSwap = rand.nextInt(cards.length);
+            String temp = cards[randomIndexToSwap];
+            cards[randomIndexToSwap] = cards[i];
+            cards[i] = temp;
+            comCardStorage3.setText(cards[0]);
+        }
+    }
+
+    /**
+     * takes coms values and converts them an integer to add together then
+     * returns the total to a string to display total
+     *
+     * @param v1 //value 1
+     * @param v2 //value 2
+     * @param v3 //value 3 if used (default 0)
+     * @param v4 //value 4 if used (default 0)
+     * @return com2Card
+     */
     public String comTotal(String v1, String v2, String v3, String v4) {
         switch (v1) {
             case "K":
@@ -472,7 +505,7 @@ public class gameFrame extends javax.swing.JFrame {
             default:
                 secValCom = Integer.parseInt(v2);
                 break;
-        }   
+        }
         /////////////////////////////////////////////////////
         switch (v3) {
             case "K":
@@ -490,7 +523,7 @@ public class gameFrame extends javax.swing.JFrame {
             default:
                 thirdValCom = Integer.parseInt(v3);
                 break;
-        }        
+        }
         //////////////////////////////////////////////////////
         switch (v4) {
             case "K":
@@ -511,8 +544,8 @@ public class gameFrame extends javax.swing.JFrame {
         }
         comTotal2C = firstValCom + secValCom + thirdValCom + fourthValCom;
         comBlackJack = firstValCom + secValCom;
-        
- if (comBlackJack == 21) {
+
+        if (comBlackJack == 21) {
             dealerBustLbl.setText("Dealer has BlackJack");
             StartBtn.setVisible(true);
         } else if (comTotal2C > 21) {
@@ -522,7 +555,17 @@ public class gameFrame extends javax.swing.JFrame {
         return com2Card;
     }
 
-    public String userTotalCards(String v1, String v2,String v3, String v4) {
+    /**
+     * takes user's values and converts them an integer to add together then
+     * returns the total to a string to display total
+     *
+     * @param v1 //value 1
+     * @param v2 //value 2
+     * @param v3 //value 3 if used (default 0)
+     * @param v4 //value 4 if used (default 0)
+     * @return userTotal
+     */
+    public String userTotalCards(String v1, String v2, String v3, String v4) {
         switch (v1) {
             case "K":
             case "Q":
@@ -594,28 +637,28 @@ public class gameFrame extends javax.swing.JFrame {
                 fourthValUser = Integer.parseInt(v4);
                 break;
         }
-        userTotal2C = firstValUser + secValUser + thirdValUser + fourthValUser;
-        userBlackJack = firstValUser + secValUser;
-        if (userTotal2C > 21){
+        userTotal2C = firstValUser + secValUser + thirdValUser + fourthValUser; //add values 
+        userBlackJack = firstValUser + secValUser; //determin if blackjack not
+        if (userTotal2C > 21) {
             userBustLbl.setText("Bust");
-        } else if(userBlackJack == 21){
+        } else if (userBlackJack == 21) {
             userBustLbl.setText("BlackJack");
         }
-        userTotal = Integer.toString(userTotal2C);
+        userTotal = Integer.toString(userTotal2C); //convert back to String
         return userTotal;
     }
-    public void winOrLose(String v1, String v2){
+
+    public void winOrLose(String v1, String v2) {
         int uT = Integer.parseInt(v1); //User Total
         int cT = Integer.parseInt(v2); //Com Total
-        if((uT > cT) && (uT < 22)){
+        if ((uT > cT) && (uT < 22)) {
             winOrLoseLbl.setVisible(true);
             winOrLoseLbl.setText("You Win");
-        } else if((cT >= uT )&& (cT < 22)){
+        } else if ((cT >= uT) && (cT < 22)) {
             winOrLoseLbl.setText("Dealer Wins");
             winOrLoseLbl.setVisible(true);
-        }   
+        }
     }
-    
 
     /**
      * @param args the command line arguments
@@ -660,35 +703,35 @@ public class gameFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel NoMoreLbl;
     private javax.swing.JButton StartBtn;
-    private javax.swing.JLabel com2Hidden;
-    private javax.swing.JLabel comCard1;
-    private javax.swing.JLabel comCard2;
-    private javax.swing.JLabel comCard3;
-    private javax.swing.JLabel comCard4;
     private javax.swing.JLabel comCardStorage2;
     private javax.swing.JLabel comCardStorage3;
     private javax.swing.JLabel comCardStorage4;
+    private javax.swing.JLabel comHand1Card1;
+    private javax.swing.JLabel comHand1Card2;
+    private javax.swing.JLabel comHand2Card1;
+    private javax.swing.JLabel comHand2Card2;
+    private javax.swing.JLabel comHand2Card3;
+    private javax.swing.JLabel comHand3Card1;
+    private javax.swing.JLabel comHand3Card2;
+    private javax.swing.JLabel comHand3Card3;
+    private javax.swing.JLabel comHand3Card4;
     private javax.swing.JLabel comTotalLbl;
     private javax.swing.JLabel dealerBustLbl;
     private javax.swing.JButton hit2CardsBtn;
     private javax.swing.JButton hit3CardsBtn;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton newGameBtn;
-    private javax.swing.JButton stand2CardsBtn;
-    private javax.swing.JLabel thirdHitLbl1;
-    private javax.swing.JLabel thirdHitLbl2;
-    private javax.swing.JLabel thirdHitLbl3;
-    private javax.swing.JLabel thirdHitLbl4;
+    private javax.swing.JButton standBtn;
     private javax.swing.JLabel userBustLbl;
-    private javax.swing.JLabel userCardLbl1;
-    private javax.swing.JLabel userCardLbl2;
-    private javax.swing.JLabel userCardLbl3;
-    private javax.swing.JLabel userCardLbl4;
-    private javax.swing.JLabel userCardLbl5;
-    private javax.swing.JLabel userCardLbl6;
-    private javax.swing.JLabel userCardLbl7;
-    private javax.swing.JLabel userCardLbl8;
-    private javax.swing.JLabel userCardLbl9;
+    private javax.swing.JLabel userHand1Card1;
+    private javax.swing.JLabel userHand1Card2;
+    private javax.swing.JLabel userHand2Card1;
+    private javax.swing.JLabel userHand2Card2;
+    private javax.swing.JLabel userHand2Card3;
+    private javax.swing.JLabel userHand3Card1;
+    private javax.swing.JLabel userHand3Card2;
+    private javax.swing.JLabel userHand3Card3;
+    private javax.swing.JLabel userHand3Card4;
     private javax.swing.JLabel userTotalLbl;
     private javax.swing.JLabel winOrLoseLbl;
     // End of variables declaration//GEN-END:variables
